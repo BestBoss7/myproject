@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/BestBoss7/myproject.git'
+                git branch: 'main', url: 'https://github.com/BestBoss7/myproject.git'
             }
         }
         stage('Build') {
@@ -13,9 +13,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying the application...'
+                echo 'Deploying application...'
             }
         }
     }
 }
-
