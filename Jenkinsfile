@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven' 
+        maven 'Maven'
     }
     stages {
         stage('Checkout') {
@@ -11,7 +11,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'mvn clean package' 
+                dir('mavenproject1') {  
+                    bat 'mvn clean package'
+                }
             }
         }
         stage('Deploy') {
